@@ -124,13 +124,21 @@ adataはAnnDataオブジェクト
 テーブルに酸素濃度の情報などを追加すると、特定のテーマに関するメタアナリシスができる。
 
 # MEMO
-GGGenome
-Metascape
-AOE(All of gene Expression)
-CellFishing
-PCA - 主成分分析
-<a href="https://umap-learn.readthedocs.io/en/latest/clustering.html">UMAP</a> - 次元圧縮
-<a href="https://www.ebi.ac.uk/gxa/sc/home">Single Cell Expression Atlas</a> - シングルセルデータを得られる。
-<a href="https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html">Scanpy</a> -
-<a href="https://anndata.readthedocs.io/en/latest/#">anndata</a>
+- GGGenome
+- GGRNA \#
+- Metascape
+- AOE(All of gene Expression)
+- CellFishing
+- PCA - 主成分分析
+- tSNE \#
+- [UMAP](https://umap-learn.readthedocs.io/en/latest/clustering.html) - 次元圧縮
+  - https://pythonoum.wordpress.com/2018/09/15/%E8%B6%85%E9%AB%98%E9%80%9F%E6%AC%A1%E5%85%83%E5%9C%A7%E7%B8%AE%E3%82%A2%E3%83%AB%E3%82%B3%E3%82%99%E3%83%AA%E3%82%B9%E3%82%99%E3%83%A0umap/
+- Human Cell Atlas \#
+- Tabula Muris \#
+- [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home) - シングルセルデータを得られる。
+- Seurat \#
+- [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html) -
+- [anndata](https://anndata.readthedocs.io/en/latest/#)
 https://github.com/yyoshiaki/mishima_gassyuku/blob/master/csv2loom/scanpy.ipynb
+
+\# : added by yyoshiaki
