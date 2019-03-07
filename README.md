@@ -82,8 +82,11 @@ conda install -c bioconda kallisto
 ##### 3.6.3 Kallisto’s pseudo mode
 kallistoのpseudoモードではsingle-cell RNA-seq実験のデータをpseudoアライメントすることができます。
 kallitoでは遺伝子ではなくsplice isoformにマッピングしていており、single-cell RNA-seqにおいて次のような理由で難しさが出てきます。
-・
+・Single-cell RNA-seqはbulk RNA-seqよりもcoverageが少ない。
+・Single-cell RNA-seqプロトコルは3'coverage biasがあるので5'末端のみが異なるisoform同士の場合、判別できない。
+・ショートリードのみを使うものではisoform判別が難しくなる。
 
+kallistoを実際に使っていきます。インデックスを作るためのトランスクリプトFASTAは<a href="https://github.com/hemberg-lab/scRNA.seq.course/blob/master/2000_reference.transcripts.fa">こちら</a>
 ```
 mkdir indices/Kallisto
 kallisto index -i indices/Kallisto/transcripts.idx Share/2000_reference.transcripts.fa
@@ -102,3 +105,4 @@ AOE(All of gene Expression)
 CellFishing
 PCA - 主成分分析
 <a href="https://umap-learn.readthedocs.io/en/latest/clustering.html">UMAP</a> - 次元圧縮
+<a href="https://www.ebi.ac.uk/gxa/sc/home">Single Cell Expression Atlas</a> - シングルセルデータを得られる。
