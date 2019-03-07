@@ -104,7 +104,8 @@ mkdir results
 mkdir results/Kallisto
 kallisto pseudo -i indices/Kallisto/transcripts.idx -o results/Kallisto -b batch.txt
 ```
-
+実行が完了すると、matrix.cells, matrix.ec, matrix.tsv, run_info.jsonというファイルが生成されます。
+matrix.ecには一列目にequivalence class IDが二列目にはtranscript IDが書かれています。
 # RNA-seq
 
 
@@ -113,9 +114,13 @@ kallisto pseudo -i indices/Kallisto/transcripts.idx -o results/Kallisto -b batch
 テーブルに酸素濃度の情報などを追加すると、特定のテーマに関するメタアナリシスができる。
 
 # MEMO
+GGGenome
 Metascape
 AOE(All of gene Expression)
 CellFishing
 PCA - 主成分分析
 <a href="https://umap-learn.readthedocs.io/en/latest/clustering.html">UMAP</a> - 次元圧縮
 <a href="https://www.ebi.ac.uk/gxa/sc/home">Single Cell Expression Atlas</a> - シングルセルデータを得られる。
+<a href="https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html">Scanpy</a> -
+<a href="https://anndata.readthedocs.io/en/latest/#">anndata</a>
+https://github.com/yyoshiaki/mishima_gassyuku/blob/master/csv2loom/scanpy.ipynb
