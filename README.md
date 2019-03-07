@@ -91,9 +91,18 @@ kallistoを実際に使っていきます。インデックスを作るための
 ```
 git clone https://github.com/hemberg-lab/scRNA.seq.course.git
 ```
+インデックス作成。
 ```
+mkdir indices
 mkdir indices/Kallisto
-kallisto index -i indices/Kallisto/transcripts.idx scRNA.seq.cource/2000_reference.transcripts.fa
+kallisto index -i indices/Kallisto/transcripts.idx scRNA.seq.course/2000_reference.transcripts.fa
+```
+
+
+```
+mkdir results
+mkdir results/Kallisto
+kallisto pseudo -i indices/Kallisto/transcripts.idx -o results/Kallisto -b batch.txt
 ```
 
 # RNA-seq
