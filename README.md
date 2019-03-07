@@ -86,10 +86,14 @@ kallitoでは遺伝子ではなくsplice isoformにマッピングしていて�
 ・Single-cell RNA-seqプロトコルは3'coverage biasがあるので5'末端のみが異なるisoform同士の場合、判別できない。
 ・ショートリードのみを使うものではisoform判別が難しくなる。
 
-kallistoを実際に使っていきます。インデックスを作るためのトランスクリプトFASTAは<a href="https://github.com/hemberg-lab/scRNA.seq.course/blob/master/2000_reference.transcripts.fa">こちら</a>
+kallistoを実際に使っていきます。インデックスを作るためのトランスクリプトFASTAは<a href="https://github.com/hemberg-lab/scRNA.seq.course/blob/master/2000_reference.transcripts.fa">こちら</a>からダウンロードできます。
+もしくは、hemberg-labの<a href="https://github.com/hemberg-lab/scRNA.seq.course.git">GitHubレポジトリ</a>をクローンしてもいいです。
+```
+git clone https://github.com/hemberg-lab/scRNA.seq.course.git
+```
 ```
 mkdir indices/Kallisto
-kallisto index -i indices/Kallisto/transcripts.idx Share/2000_reference.transcripts.fa
+kallisto index -i indices/Kallisto/transcripts.idx scRNA.seq.cource/2000_reference.transcripts.fa
 ```
 
 # RNA-seq
