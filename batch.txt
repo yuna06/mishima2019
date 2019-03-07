@@ -1,0 +1,3 @@
+#id file1 file 2
+cell1 ERR522959_1_trimmed.fq
+cell2 ERR522959_2_trimmed.fq
