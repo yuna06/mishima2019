@@ -106,6 +106,16 @@ kallisto pseudo -i indices/Kallisto/transcripts.idx -o results/Kallisto -b batch
 ```
 実行が完了すると、matrix.cells, matrix.ec, matrix.tsv, run_info.jsonというファイルが生成されます。
 matrix.ecには一列目にequivalence class IDが二列目にはtranscript IDが書かれています。
+
+
+###### t-SNE
+t-SNEとはt-distributed Stochastic Neighbor Embeddingのことで、（訳すとt分布確率近傍埋め込み）
+![image](./anndata.png)
+
+
+adataはAnnDataオブジェクト
+
+
 # RNA-seq
 
 
