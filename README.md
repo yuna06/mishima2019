@@ -125,6 +125,46 @@ valueの削除、追加はadata.obs['key1'], adata.var['key2']で行うことが
 # 講義
 テーブルに酸素濃度の情報などを追加すると、特定のテーマに関するメタアナリシスができる。
 
+
+# Anacondaアンインストール
+Anacondaでこれまで様々なライブラリをインストールしてきたので、ScanpyやCellFishingなど、うまく動かなくなってきました。そこで、今回は一度Anacondaを
+
+```
+conda install anaconda-clean
+anaconda-clean
+cd /Users/username/anaconda3/
+rm -rf anaconda3
+```
+
+以上でAnacondaのアンインストール、ディレクトリの削除が完了です。
+[こちらの記事](https://qiita.com/neet-AI/items/54f675dbcc1a0a513882)に従ってAnacondaをもう一度入れていきます。
+```
+brew -v
+>> Homebrew 2.0.3
+brew update
+```
+公式ホームページからAnacondaダウンロードします。これを機にPython3.6 -> Python3.7にします。
+```
+conda install python=3.7
+```
+[condaのチャネルについて](https://qiita.com/yuj/items/8ce25959427ea97d373b)
+[jupyter labインストール](https://qiita.com/taka4sato/items/378782763dec3dacb1ee)
+[jupyter lab](https://qiita.com/xshirade/items/ca65133aed51d40b5300)
+```
+conda install -c conda-forge xonsh
+conda config --add channels bioconda
+# チャンネル一覧を取得
+conda config --get channels
+conda install -c bioconda scanpy
+conda install -c conda-forge jupyterlab
+jupyter notebook --generate-config
+jupyter lab
+```
+http://localhost:8080/lab
+で表示
+
+
+
 # MEMO
 - GGGenome
 - GGRNA \#
@@ -134,13 +174,19 @@ valueの削除、追加はadata.obs['key1'], adata.var['key2']で行うことが
 - PCA - 主成分分析
 - tSNE \#
 - [UMAP](https://umap-learn.readthedocs.io/en/latest/clustering.html) - 次元圧縮
-  - https://pythonoum.wordpress.com/2018/09/15/%E8%B6%85%E9%AB%98%E9%80%9F%E6%AC%A1%E5%85%83%E5%9C%A7%E7%B8%AE%E3%82%A2%E3%83%AB%E3%82%B3%E3%82%99%E3%83%AA%E3%82%B9%E3%82%99%E3%83%A0umap/
+  - [python会記事](https://pythonoum.wordpress.com/2018/09/15/%E8%B6%85%E9%AB%98%E9%80%9F%E6%AC%A1%E5%85%83%E5%9C%A7%E7%B8%AE%E3%82%A2%E3%83%AB%E3%82%B3%E3%82%99%E3%83%AA%E3%82%B9%E3%82%99%E3%83%A0umap/)
 - Human Cell Atlas \#
 - Tabula Muris \#
 - [Single Cell Expression Atlas](https://www.ebi.ac.uk/gxa/sc/home) - シングルセルデータを得られる。
 - Seurat \#
 - [Scanpy](https://scanpy-tutorials.readthedocs.io/en/latest/pbmc3k.html) -
 - [anndata](https://anndata.readthedocs.io/en/latest/#)
-https://github.com/yyoshiaki/mishima_gassyuku/blob/master/csv2loom/scanpy.ipynb
+[python会記事](https://github.com/yyoshiaki/mishima_gassyuku/blob/master/csv2loom/scanpy.ipynb)
 
 \# : added by yyoshiaki
+
+ディレクトリを確認せずに削除
+```
+rm -rf
+```
+pigz - マルチコアでgzファイルの圧縮解凍ができる。
