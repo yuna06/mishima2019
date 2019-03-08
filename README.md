@@ -113,7 +113,9 @@ t-SNEとはt-distributed Stochastic Neighbor Embeddingのことで、（訳す�
 ![image](./anndata.png)
 
 
-adataはAnnDataオブジェクト
+adataはAnnDataオブジェクトで、adata.Xというマトリックスを持ちadata.Xのvalue, observationに対するアノテーションマトリックスとして、adata.var, adata.obsがある。また、非構造化データ（辞書型のようなデータ）として、adata.unsがある。
+
+valueの削除、追加はadata.obs['key1'], adata.var['key2']で行うことができる。observationとvariableの名前はadata.obs_names, adata.var_namesで引き出すことができる。
 
 
 # RNA-seq
