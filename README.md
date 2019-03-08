@@ -117,6 +117,17 @@ adataはAnnDataオブジェクトで、adata.Xというマトリックスを持�
 
 valueの削除、追加はadata.obs['key1'], adata.var['key2']で行うことができる。observationとvariableの名前はadata.obs_names, adata.var_namesで引き出すことができる。
 
+Single-cell では擬似時間解析(pseudotime解析)による細胞系譜の追跡が可能。
+
+Scanpyの.plの関数は.tlや.ppと同じ名前で呼び出すことができる。
+
+10X genomics, cellranger, smart-seqでシーケンス。
+ビーズの中に細胞を封入してバーコード配列で認識した一細胞のRNAを読む。
+10Xの場合フォルダの中に３つファイルがあり、遺伝子ファイル、バーコードファイル、adataで構成される。
+AnnotationDataのXは縦軸がgene(var),横軸はcell(obs)
+cellには細胞周期(S,M,G1,G2)、UMAP.X, UMAP.Yのデータなどがアノテーションされている。
+geneには遺伝子の機能（オンコロジーできる）や0出ない値を持つ細胞数などがアノテーションされている。
+Xはdense matrix(numpy使う)とsparse matrix(scipy使う)の２種類があり、sparse matrixはdense matrixの非ゼロの値の行と列と値を入れるのでゼロがない行列になる。
 
 # RNA-seq
 
@@ -190,3 +201,5 @@ http://localhost:8080/lab
 rm -rf
 ```
 pigz - マルチコアでgzファイルの圧縮解凍ができる。
+HDF - バイナリファイル形式の一つで、一つのファイルの中に階層構造を持たせ、多種類のデータ（文字、数字、行列、画像）を保存することができる。
+loompy
