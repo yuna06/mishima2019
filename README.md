@@ -108,46 +108,6 @@ kallisto pseudo -i indices/Kallisto/transcripts.idx -o results/Kallisto -b batch
 matrix.ecには一列目にequivalence class IDが二列目にはtranscript IDが書かれています。
 
 
-###### t-SNE
-t-SNEとはt-distributed Stochastic Neighbor Embeddingのことで、（訳すとt分布確率近傍埋め込み）
-![image](./anndata.png)
-
-
-adataはAnnDataオブジェクトで、adata.Xというマトリックスを持ちadata.Xのvalue, observationに対するアノテーションマトリックスとして、adata.var, adata.obsがある。また、非構造化データ（辞書型のようなデータ）として、adata.unsがある。
-
-valueの削除、追加はadata.obs['key1'], adata.var['key2']で行うことができる。observationとvariableの名前はadata.obs_names, adata.var_namesで引き出すことができる。
-
-Single-cell では擬似時間解析(pseudotime解析)による細胞系譜の追跡が可能。
-
-Scanpyの.plの関数は.tlや.ppと同じ名前で呼び出すことができる。
-
-10X genomics, cellranger, smart-seqでシーケンス。
-ビーズの中に細胞を封入してバーコード配列で認識した一細胞のRNAを読む。
-10Xの場合フォルダの中に３つファイルがあり、遺伝子ファイル、バーコードファイル、adataで構成される。
-AnnotationDataのXは縦軸がgene(var),横軸はcell(obs)
-cellには細胞周期(S,M,G1,G2)、UMAP.X, UMAP.Yのデータなどがアノテーションされている。
-geneには遺伝子の機能（オンコロジーできる）や0出ない値を持つ細胞数などがアノテーションされている。
-Xはdense matrix(numpy使う)とsparse matrix(scipy使う)の２種類があり、sparse matrixはdense matrixの非ゼロの値の行と列と値を入れるのでゼロがない行列になる。
-
-系譜
-
-regless_out細胞周期を揃える
-```
-X = X0 + αX1 + βX2 + γ
-```
-機械学習で係数(cell cycle score)を決定
-Xには遺伝子ごとの発現量が入っているベクトル
-それぞれの細胞周期と関係の深い遺伝子が大きく反映されるようになっている。
-最後にcell cycle scoreを0にしてX0を求めて、細胞周期による差異を消すことができる。それがregless_out
-
-PCA, tSME, UMAPで次元圧縮することにより、X, cell matrixなども圧縮の対象となる。
-X[gene,cell]として、
-```
-|X[:,1], X[:,2]|*
-```
-二次元、３次元のグラフを書いて、クラスターごとの分布図をプロットできる。クラスターごとの距離を最短でつなぐ線を描くことによって系譜を説明することができる。(iroot, louvain, leiden, pseudotime)
-クラスターを順番に横軸に並べ、縦軸を特定の遺伝子発現領の平均値としてとると、系譜での特定の遺伝子の発現の流れを描くことができる。
-
 # RNA-seq
 
 
